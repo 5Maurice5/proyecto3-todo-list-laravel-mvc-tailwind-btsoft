@@ -1,59 +1,200 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 📝 To-Do List
 
-## About Laravel
+### Aplicación web para gestión de tareas, categorías y etiquetas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Construida con **Laravel 12** siguiendo el patrón **MVC**, vistas **Blade** y estilos con **Tailwind CSS v4**.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+</div>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 📖 Descripción
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Aplicación web integral para la gestión de tareas personales. Permite **crear, listar, ver, editar y eliminar** tareas, organizarlas por **categorías** y clasificarlas con **múltiples etiquetas**. Diseñada sin sistema de autenticación (se contempla como fase futura) y totalmente **responsive** para uso en escritorio y dispositivos móviles.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ✨ Características
 
-## Laravel Sponsors
+| Módulo              | Funcionalidad                                                                                         |
+| ------------------- | ----------------------------------------------------------------------------------------------------- |
+| 🗂️ **Tareas**       | CRUD completo · título, descripción, categoría, etiquetas múltiples y estado (pendiente / completada) |
+| 📁 **Categorías**   | CRUD completo · organiza tus tareas por área o proyecto                                               |
+| 🏷️ **Etiquetas**    | CRUD completo · clasifica tareas con múltiples tags                                                   |
+| 📱 **Responsive**   | Interfaz adaptada a móvil, tablet y escritorio                                                        |
+| ✅ **Validaciones** | Formularios con validación de datos en servidor                                                       |
+| 🎨 **UI moderna**   | Tailwind CSS v4 con gradientes, iconos SVG y componentes reutilizables                                |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Stack Tecnológico
 
-### Premium Partners
+- **Backend:** Laravel 12 (PHP 8.2)
+- **Frontend:** Blade Templates + Tailwind CSS v4
+- **Base de datos:** MySQL (vía XAMPP)
+- **Bundler:** Vite
+- **Arquitectura:** MVC (Modelo - Vista - Controlador)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 📋 Requisitos previos
 
-## Contributing
+- [XAMPP](https://www.apachefriends.org/) (PHP ≥ 8.2 y MySQL)
+- [Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/) y npm
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🚀 Instalación
 
-## Code of Conduct
+**1. Clonar el repositorio dentro de `htdocs`**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cd C:/xampp/htdocs
+git clone https://github.com/tu-usuario/todolist.git
+cd todolist
+```
 
-## Security Vulnerabilities
+**2. Instalar dependencias de PHP**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+composer install
+```
 
-## License
+**3. Instalar dependencias de Node**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+npm install
+```
+
+**4. Configurar variables de entorno**
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Edita el archivo `.env` con los datos de conexión de tu base de datos local (host, puerto, nombre de la BD, usuario y contraseña).
+
+**5. Crear la base de datos**
+
+Desde XAMPP, abre `phpMyAdmin` y crea una base de datos llamada `todolist_db`.
+
+**6. Ejecutar las migraciones**
+
+```bash
+php artisan migrate
+```
+
+_(Opcional) Poblar con datos de ejemplo:_
+
+```bash
+php artisan db:seed
+```
+
+## ▶️ Uso
+
+Necesitas **dos terminales abiertas simultáneamente**:
+
+**Terminal 1 — Compilar los assets (Tailwind/Vite):**
+
+```bash
+npm run dev
+```
+
+**Terminal 2 — Levantar el servidor de Laravel:**
+
+```bash
+php artisan serve
+```
+
+Abre tu navegador en:
+
+```
+http://127.0.0.1:8000
+```
+
+> 💡 Para producción, corre `npm run build` una vez y ya no necesitas dejar `npm run dev` corriendo.
+
+## 🗂️ Estructura del proyecto
+
+```
+todolist/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── TaskController.php
+│   │   ├── CategoryController.php
+│   │   └── TagController.php
+│   └── Models/
+│       ├── Task.php
+│       ├── Category.php
+│       └── Tag.php
+├── database/
+│   └── migrations/
+│       ├── ..._create_categories_table.php
+│       ├── ..._create_tags_table.php
+│       ├── ..._create_tasks_table.php
+│       └── ..._create_task_tag_table.php
+├── resources/
+│   ├── views/
+│   │   ├── layouts/app.blade.php
+│   │   ├── components/form-errors.blade.php
+│   │   ├── tasks/
+│   │   ├── categories/
+│   │   └── tags/
+│   └── css/app.css
+└── routes/
+    └── web.php
+```
+
+## 🧩 Modelo de datos
+
+```
+┌─────────────┐        ┌─────────────┐        ┌─────────────┐
+│  Category   │        │    Task     │        │     Tag     │
+├─────────────┤        ├─────────────┤        ├─────────────┤
+│ id          │◄──────┐│ id          │┌──────►│ id          │
+│ name        │  1:N   │ title       ││  N:N   │ name        │
+└─────────────┘        │ description ││        └─────────────┘
+                        │ status      ││
+                        │ category_id ││        ┌─────────────┐
+                        └─────────────┘└───────►│  task_tag   │
+                                                 │ task_id     │
+                                                 │ tag_id      │
+                                                 └─────────────┘
+```
+
+- Una **Task** pertenece a una **Category** (`belongsTo`)
+- Una **Category** tiene muchas **Tasks** (`hasMany`)
+- Una **Task** tiene muchas **Tags**, y una **Tag** puede estar en muchas **Tasks** (`belongsToMany`, relación N:N vía tabla pivote `task_tag`)
+
+## 🗺️ Rutas principales
+
+| Método         | Ruta                     | Acción                               |
+| -------------- | ------------------------ | ------------------------------------ |
+| GET            | `/`                      | Página principal (listado de tareas) |
+| GET/POST       | `/tasks`                 | Listar / crear tareas                |
+| GET/PUT/DELETE | `/tasks/{task}`          | Ver / editar / eliminar tarea        |
+| GET/POST       | `/categories`            | Listar / crear categorías            |
+| GET/PUT/DELETE | `/categories/{category}` | Ver / editar / eliminar categoría    |
+| GET/POST       | `/tags`                  | Listar / crear etiquetas             |
+| GET/PUT/DELETE | `/tags/{tag}`            | Ver / editar / eliminar etiqueta     |
+
+Ver el listado completo con:
+
+```bash
+php artisan route:list
+```
+
+## 🗺️ Roadmap
+
+- [ ] Autenticación de usuarios (login / registro)
+- [ ] Filtros y búsqueda de tareas
+- [ ] Fechas límite y recordatorios
+- [ ] Modo oscuro
+
+## 📄 Licencia
+
+Este proyecto es de uso académico / personal.
+
+---
+
+<div align="center">
+
+Hecho con ☕ y Laravel
+
+</div>
